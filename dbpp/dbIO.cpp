@@ -27,23 +27,4 @@ bool dbIO::write(std::string data) {
 	return true;
 }
 
-template <typename T>
-std::list<T> dbIO::read() {
-	std::ifstream infile(this->path);
-	std::string line;
-	std::list<T> res;
-	while (std::getline(infile, line))
-	{
-		std::istringstream iss(line);
-		int a, b;
-		if (!(iss >> a >> b)) { break; } // error
-
-		try {
-			res.push_back(T(line));
-		}
-		catch (int n) {
-			throw std::runtime_error("Something went wrong with model class constructor");
-		}
-	}
-}
 

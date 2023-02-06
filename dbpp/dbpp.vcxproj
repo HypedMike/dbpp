@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dbIO.cpp" />
-    <ClCompile Include="dbModel.h" />
     <ClCompile Include="dbpp.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>

@@ -24,9 +24,6 @@
     <ClCompile Include="dbpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dbModel.h">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dbIO.h">

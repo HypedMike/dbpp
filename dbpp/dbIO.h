@@ -3,7 +3,6 @@
 #include <fstream>
 #include <list>
 #include <sstream>
-#include "dbModel.h"
 
 
 class dbIO
@@ -25,6 +24,22 @@ public:
 	bool write(std::string data);
 
 	template <typename T>
-	std::list<T> read();
+	std::list<T> read() {
+		std::ifstream infile(this->path);
+		std::string line;
+		std::list<T> res;
+		while (std::getline(infile, line)) 
+		{
+			std::istringstream iss(line);
+
+			try {
+				res.push_back(T(line));
+			}
+			catch (int n) {
+				throw std::runtime_error("Something went wrong with model class constructor");
+			}
+		}
+		return res;
+	}
 
 };
